@@ -8,28 +8,32 @@ SHELLS = ["indian red", "tan", "cornflower blue", "olive", "thistle"]
 
 
 
-# Set up screen
+# Screen Setup
 wn = Screen()
 wn.bgcolor("beige")
 
-# Create a turtle object
+# Creates a turtle object
 t1 = Turtle()
 t1.speed("fastest")
 t1.hideturtle()
-# adjust = 10
+
+def  make_spirograph(tilt, sides):
+    for x in range(int(360/tilt)):
+        t1.pencolor(random.choice(SHELLS))
+        # Make a circle if sides == 1 or 2
+        if sides == 1 or sides == 2:
+            t1.circle(100)
+        else:
+            # Make a shape based on given sides
+            for s in range(sides):
+                t1.forward(100)
+                t1.left(360/sides)
+
+        # Shifts current pos by given tilt
+        t1.setheading(t1.heading() + tilt)
 
 
-# while adjust != 360:
-#     t1.pencolor(random.choice(SHELLS))
-#     t1.circle(100)
-#     t1.setheading(adjust)
-#     adjust += 10
-
-def  make_spirograph(angle):
-    pass
-
-
-
+make_spirograph(10, 2)
 wn.exitonclick()
 
 

@@ -1,8 +1,7 @@
 from turtle import Turtle, Screen
 
 
-# GOAL: Create an Etch-a-Sketch
-# Move L, R, U, D, and diagonally
+# GOAL: Create an Etch-a-Sketch that can go forward & backward, but also diagonal
 
 # Window & Pointer setup
 pointer = Turtle()
