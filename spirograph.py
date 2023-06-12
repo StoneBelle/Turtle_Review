@@ -16,17 +16,18 @@ wn.bgcolor("beige")
 t1 = Turtle()
 t1.speed("fastest")
 t1.hideturtle()
-adjust = 10
+# adjust = 10
 
 
-while adjust != 360:
-    t1.pencolor(random.choice(SHELLS))
-    t1.circle(100)
-    t1.setheading(adjust)
-    adjust += 10
+# while adjust != 360:
+#     t1.pencolor(random.choice(SHELLS))
+#     t1.circle(100)
+#     t1.setheading(adjust)
+#     adjust += 10
 
-def make_spirograph():
+def  make_spirograph(angle):
     pass
+
 
 
 wn.exitonclick()
