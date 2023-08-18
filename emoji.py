@@ -1,7 +1,6 @@
 from turtle import Turtle, Screen
 
 
-
 # Star Formula
 # 180 / num_points_on_star (i.e vertices)
 # 180 - vertice_angle (i.e. exterior angle between 2 vertices) 
@@ -27,7 +26,7 @@ def make_face(x, y, colour):
     franklin.circle(120)
     franklin.end_fill()
 
-def make_semi_circle(colour, my_dir, x, y, r):
+def make_semi_circle(colour, my_dir, x, y, r, d):
     franklin.color(colour)
     franklin.penup()
     franklin.goto(x, y)
@@ -36,7 +35,7 @@ def make_semi_circle(colour, my_dir, x, y, r):
     franklin.begin_fill()
     franklin.circle(r, 180)
     franklin.lt(90)
-    franklin.fd(r*2)
+    franklin.fd(r*d)
     franklin.end_fill()
 
 def make_star(colour,x, y, num_vertex, size):
@@ -60,7 +59,7 @@ def emoji_one():
     make_face(-290, 141, "khaki")   # Face Base
     make_star("sandy brown",-370, 295, 5, 65)   # Left Eye
     make_star("sandy brown", -270, 295, 5, 65)  # Right Eye
-    make_semi_circle("light coral", 270, -340, 225, 50)   # Mouth    
+    make_semi_circle("light coral", 270, -340, 225, 50, 2)   # Mouth    
 
     # Teeth
     franklin.color("white")
@@ -73,10 +72,54 @@ def emoji_one():
     franklin.fd(10)
     franklin.end_fill()
 
+    franklin.hideturtle()
+
+
+def emoji_two():
+    "Crying Emoji"
+    make_face(-190, 141, "khaki")   # Face Base
+    franklin.penup()
+    franklin.goto(-98, 150)
+    franklin.pensize(10)
+    franklin.pendown()
+    franklin.seth(90)
+    franklin.pensize(10)
+    franklin.color("black")
+    franklin.circle(30, 175)
+
+    franklin.penup()
+    franklin.goto(17, 148)
+    franklin.pendown()
+    franklin.seth(90)
+    franklin.circle(30, 175)
+    franklin.pensize(5)
+    make_semi_circle("light coral", 270, -119, 102, 50, 2)   # Mouth    
+
+
+    # Tooth
+    franklin.penup()
+    franklin.goto(-54, 105)
+    franklin.color("white")
+    franklin.begin_fill()
+    franklin.seth(270)
+    franklin.fd(30)
+    franklin.rt(90)
+    franklin.fd(30)
+    franklin.rt(90)
+    franklin.fd(30)
+    franklin.end_fill()
 
     franklin.hideturtle()
 
+
+# Call emoji functions
 emoji_one()
+emoji_two()
+
+
+
+
+
 
 wn.onscreenclick(button_clicked, 1)
 
